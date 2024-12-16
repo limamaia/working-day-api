@@ -1,7 +1,7 @@
 # Task Management API
 
 ## Description
-This is a RESTful API for managing tasks and users, developed using Golang with the Gin framework. The project follows the MVC architecture with Clean Code principles and includes unit tests.
+This is a RESTful API for managing tasks and users, developed using Golang with the Gin framework for routing and GORM for ORM (Object Relational Mapping). The project follows the MVC architecture with Clean Code principles and includes unit tests.
 
 The API supports JWT authentication, CRUD operations for tasks, and basic user management. It also provides an interactive API documentation via Swagger.
 
