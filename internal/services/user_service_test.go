@@ -105,7 +105,7 @@ func TestUserService_CreateUser(t *testing.T) {
 			Password: "plain_password",
 		}
 
-		mockRepo.On("FindByEmail", "test@example.com").Return(nil, nil) // Não encontra usuário com o mesmo email
+		mockRepo.On("FindByEmail", "test@example.com").Return(nil, nil)
 		mockHasher.On("HashPassword", "plain_password").Return("hashed_password", nil)
 		mockRepo.On("Create", mockUser).Return(nil)
 
@@ -152,7 +152,7 @@ func TestUserService_CreateUser(t *testing.T) {
 			Password: "plain_password",
 		}
 
-		mockRepo.On("FindByEmail", "test2@example.com").Return(nil, nil) // Não encontra usuário com o mesmo email
+		mockRepo.On("FindByEmail", "test2@example.com").Return(nil, nil)
 		mockHasher.On("HashPassword", "plain_password").Return("", errors.New("hashing error"))
 
 		err := service.CreateUser(mockUser)
@@ -173,7 +173,7 @@ func TestUserService_CreateUser(t *testing.T) {
 			Password: "plain_password",
 		}
 
-		mockRepo.On("FindByEmail", "test3@example.com").Return(nil, nil) // Não encontra usuário com o mesmo email
+		mockRepo.On("FindByEmail", "test3@example.com").Return(nil, nil)
 		mockHasher.On("HashPassword", "plain_password").Return("hashed_password", nil)
 		mockRepo.On("Create", mockUser).Return(errors.New("repository error"))
 

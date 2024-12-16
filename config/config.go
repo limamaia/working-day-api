@@ -135,18 +135,6 @@ func (config AppVars) Validate() error {
 	return validation.ValidateStruct(
 		&config,
 		validation.Field(&config.AppEnv, validation.Required),
-		// validation.Field(&config.RoDBHost, validation.Required),
-		// validation.Field(&config.RoDBName, validation.Required),
-		// validation.Field(&config.RoDBUsername, validation.Required),
-		// validation.Field(&config.RoDBPassword, validation.Required),
-		// validation.Field(&config.RwDBHost, validation.Required),
-		// validation.Field(&config.RwDBName, validation.Required),
-		// validation.Field(&config.RwDBUsername, validation.Required),
-		// validation.Field(&config.RwDBPassword, validation.Required),
-		// validation.Field(&config.DBMaxOpenConns, validation.Required),
-		// validation.Field(&config.DBMaxIdleConns, validation.Required),
-		// validation.Field(&config.DBMaxDbLifetime, validation.Required),
-		// validation.Field(&config.NewRelicLicense, validation.Required),
 	)
 }
 

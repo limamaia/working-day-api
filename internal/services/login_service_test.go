@@ -55,7 +55,7 @@ func TestLoginService_Login(t *testing.T) {
 	user := &domain.User{
 		ID:       1,
 		Email:    "test@example.com",
-		Password: "$2a$10$hashSimuladoParaTeste", // Hash simulado
+		Password: "$2a$10$hashSimuladoParaTeste",
 		Role:     &domain.Role{Slug: "user"},
 	}
 
