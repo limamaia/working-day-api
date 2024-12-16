@@ -76,3 +76,9 @@ The project is organized with **MVC (Model-View-Controller)** architecture and f
 - **User Management**: Create, retrieve, and validate users.
 - **Swagger Documentation**: Interactive API documentation.
 - **Unit Testing**: Comprehensive test coverage for services.
+
+## Key areas for improvement in the project include:
+
+    Adding Kubernetes setup.
+    Implementing integration tests.
+    Enhancing input validation to improve data reliability and system robustness.
