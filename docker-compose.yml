@@ -1,0 +1,51 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'database'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - working-day-api
+
+  rabbitmq:
+    build:
+      context: ./docker/rabbitmq
+      dockerfile: Dockerfile
+    container_name: rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    ports:
+      - '5672:5672' 
+      - '15672:15672' 
+    networks:
+      - working-day-api
+
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/go/Dockerfile
+    container_name: golang-app
+    restart: always
+    depends_on:
+      - mysql
+      - rabbitmq
+    ports:
+      - '80:80'
+    networks:
+      - working-day-api
+
+volumes:
+  mysql:
+networks:
+  working-day-api:
